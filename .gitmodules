@@ -1,4 +1,4 @@
 [submodule "uWebSockets"]
 	path = uWebSockets
 	url = https://github.com/dooub/uWebSockets
-	branch = increase_fallback_size
+	branch = 16kb
