@@ -19,8 +19,8 @@ jobs:
           xcopy /Y dist\*.node .
           git status
           git pull origin binaries
-          git config --global user.email "alexhultman@gmail.com"
-          git config --global user.name "Alex Hultman"
+          git config --global user.email "will@dooub.com"
+          git config --global user.name "Will Choe"
           git commit -a -m "[GitHub Actions] Updated windows-latest binaries"
           git push "https://jazzbearz:${{ secrets.SECRET }}@github.com/dooub/uWebSockets.js" binaries
 
@@ -42,7 +42,7 @@ jobs:
           cp dist/*.node .
           git status
           git pull origin binaries
-          git config --global user.email "alexhultman@gmail.com"
-          git config --global user.name "Alex Hultman"
+          git config --global user.email "will@dooub.com"
+          git config --global user.name "Will Choe"
           git commit -a -m "[GitHub Actions] Updated ${{ matrix.os }} binaries" || true
           git push "https://jazzbearz:${{ secrets.SECRET }}@github.com/dooub/uWebSockets.js" binaries
