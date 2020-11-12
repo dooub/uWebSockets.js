@@ -12,7 +12,7 @@ jobs:
       - name: Update binaries
         run: |
           $ErrorActionPreference = 'SilentlyContinue'
-          git clone --recursive https://github.com/uNetworking/uWebSockets.js.git
+          git clone --recursive https://github.com/dooub/uWebSockets.js.git
           cd uWebSockets.js
           nmake
           git checkout binaries
@@ -22,7 +22,7 @@ jobs:
           git config --global user.email "alexhultman@gmail.com"
           git config --global user.name "Alex Hultman"
           git commit -a -m "[GitHub Actions] Updated windows-latest binaries"
-          git push "https://alexhultman:${{ secrets.SECRET }}@github.com/uNetworking/uWebSockets.js" binaries
+          git push "https://jazzbearz:${{ secrets.SECRET }}@github.com/dooub/uWebSockets.js" binaries
 
   build-unix:
     runs-on: ${{ matrix.os }}
@@ -35,7 +35,7 @@ jobs:
           sudo xcode-select -switch /Applications/Xcode_12.2.app || true
           sudo apt update || true
           sudo apt install -y g++-aarch64-linux-gnu || true
-          git clone --recursive https://github.com/uNetworking/uWebSockets.js.git
+          git clone --recursive https://github.com/dooub/uWebSockets.js.git
           cd uWebSockets.js
           make
           git checkout binaries
@@ -45,4 +45,4 @@ jobs:
           git config --global user.email "alexhultman@gmail.com"
           git config --global user.name "Alex Hultman"
           git commit -a -m "[GitHub Actions] Updated ${{ matrix.os }} binaries" || true
-          git push "https://alexhultman:${{ secrets.SECRET }}@github.com/uNetworking/uWebSockets.js" binaries
+          git push "https://jazzbearz:${{ secrets.SECRET }}@github.com/dooub/uWebSockets.js" binaries
